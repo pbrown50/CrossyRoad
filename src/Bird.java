@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-
 public class Bird {
     private Image image;
     private int x;
@@ -8,26 +7,20 @@ public class Bird {
     private int dx;
     private int dy;
     private boolean isDead;
-    private final int BIRD_WIDTH = 300;
-    private final int BIRD_HEIGHT = 150;
-    private final int INITIAL_X = 75;
-    private final int INITIAL_Y = 700;
+    private final int BIRD_WIDTH = 70;
+    private final int BIRD_HEIGHT = 70;
+    private final int INITIAL_X = 180;
+    public static final int INITIAL_Y = 750;
     public Bird() {
         x = INITIAL_X;
         y = INITIAL_Y;
-        dx = 0;
-        dy = 0;
+        dx = INITIAL_X;
+        dy = INITIAL_Y;
         isDead = false;
         image = new ImageIcon("Resources/Bird.png").getImage();
     }
-    public void setX (int x) {
-        this.x = x;
-    }
     public int getX () {
         return x;
-    }
-    public void setY (int y) {
-        this.y = y;
     }
     public int getY () {
         return y;
@@ -38,40 +31,45 @@ public class Bird {
     public void setDy(int dy) {
         this.dy = dy;
     }
-    public void setDead(boolean b) {
-        isDead = b;
-    }
     public boolean isDead(Car[] cars) {
-        for (int i = 0; i < BIRD_WIDTH; i++) {
-            for (int j = 0; j < BIRD_HEIGHT; j++) {
-                if (isTouching(i + 1, j + 1, cars)) {
-                    isDead = true;
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    public boolean isTouching (int i, int j, Car[] cars) {
         for (Car car : cars) {
-            if (i < car.getX() + car.getWidth() && i > car.getX()) {
-                if (j > car.getY() - car.getHeight() && j < car.getY()) {
-                    return true;
-                }
+            int cx = car.getX();
+            int cy = car.getY();
+            if (x < cx + car.getWidth() && x > cx && y < cy + car.getHeight() && y > cy) {
+                return true;
             }
         }
-        return false;
+            return false;
     }
-
     public void move() {
+        if (dy < 0) {
+            dy = INITIAL_Y;
+            Game.points--;
+            for (Car car: Game.cars) {
+                car.setSpeed(0.1);
+            }
+        }
+        if (dx < -BIRD_WIDTH / 2) {
+            dx = Game.WINDOW_WIDTH - BIRD_WIDTH;
+        }
+        if (dx > Game.WINDOW_WIDTH - 10) {
+            dx = 0;
+        }
         x = dx;
         y = dy;
+        if (GameViewer.state != 56) {
+            GameViewer.playSound("Resources/MOVE.wav");
+        }
     }
-    public void drawBird (Graphics g, GameViewer game) {
+    public void draw (Graphics g, GameViewer game) {
         g.drawImage(image, x, y, BIRD_WIDTH, BIRD_HEIGHT, game);
     }
     public void reset () {
         x = INITIAL_X;
         y = INITIAL_Y;
+        dx = INITIAL_X;
+        dy = INITIAL_Y;
+        Game.points = 0;
+        Game.count = 0;
     }
 }
