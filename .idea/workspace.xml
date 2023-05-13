@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="284a44cd-f407-4526-a09e-0ba2ed59a04b" name="Changes" comment="V1">
-      <change afterPath="$PROJECT_DIR$/Resources/Die.m4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/Die.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/MOVE.m4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/START.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/WELCOME_SCREEN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/move.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Bird.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Bird.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Car1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Car1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Car2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Car2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Car3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Car3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameViewer.java" afterDir="false" />
     </list>
@@ -88,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683342700992</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="V1">
+      <created>1683924512450</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683924512450</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
